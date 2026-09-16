@@ -12,3 +12,9 @@ Es una experiencia inmersiva en 3D de tipo "escape room" y laberintos donde tu m
 1114-
 GABRIELA GARCIA OSUNA-
 SARA ESTEFANY MONTAÑO ECHEVERRY 
+
+## Detalles del Proyecto
+- **Lenguaje:** JavaScript 
+- **Integrantes del grupo:**
+  - Integrante 1 (Sara Estefany Montaño Echeverry)
+  - Integrante 2 (Gabriela Garcia Osuna)
