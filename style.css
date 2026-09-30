@@ -1,0 +1,1488 @@
+/* ========================================= */
+/* ESTILOS GENERALES Y CONFIGURACIÓN */
+/* ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #0b0612 70%);
+  background-attachment: fixed; /* Mantiene el brillo quieto mientras bajas */
+  color: #e5def2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+
+
+
+css
+
+/* Contenedor general que agrupa todas las cajitas */
+.decoraciones-terror {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Se mantiene detrás de tus productos y botones */
+  pointer-events: none; /* Nadie puede hacerles clic por accidente */
+  overflow: hidden;
+}
+
+/* Estilo base para cada cajita decorativa */
+.caja-terror {
+  position: absolute;
+  width: 120px; /* Tamaño máximo de la cajita */
+  height: 120px;
+  opacity: 0.4; /* Sutiles para que no distraigan de la tienda; sube a 0.7 si quieres que destaquen más */
+  animation: flotacionFantasmal 6s ease-in-out infinite alternate; /* Animación de balanceo */
+}
+
+.caja-terror img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* UBICACIONES EXACTAS DE LAS CAJITAS */
+.pos-arriba-izquierda {
+  top: 15%;
+  left: 5%;
+}
+
+.pos-medio-derecha {
+  top: 50%;
+  right: 3%;
+  animation-delay: 1.5s; /* Desfasa la animación para que no se muevan al mismo tiempo */
+}
+
+.pos-abajo-izquierda {
+  top: 85%;
+  left: 8%;
+  animation-delay: 3s;
+}
+
+/* EFECTO DE ANIMACIÓN: Hace que las cajitas floten suavemente arriba y abajo */
+@keyframes flotacionFantasmal {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-15px) rotate(3deg); /* Sube 15px y gira un poco */
+  }
+}
+
+/* ========================================= */
+/* MENÚ DE NAVEGACIÓN Y BORDE DE SANGRE */
+/* ========================================= */
+.sitio-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.menu-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: rgba(11, 5, 18, 0.98);
+  border-bottom: 2px solid #3b2455;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 2;
+}
+
+.menu-navegacion .logo {
+  color: #bf55ec;
+  font-size: 28px;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(191, 85, 236, 0.6);
+}
+
+.menu-navegacion .enlaces {
+  display: flex;
+  align-items: center;
+}
+
+.menu-navegacion .enlaces a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-navegacion .enlaces a:hover {
+  color: #bf55ec;
+}
+
+.menu-navegacion .enlaces .btn-carrito {
+  background: #23123a;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #bf55ec;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(191, 85, 236, 0.3);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.menu-navegacion .enlaces .btn-carrito:hover {
+  transform: scale(1.05);
+  background: #3b1d5e;
+}
+
+.sangre-borde {
+  width: 100%;
+  height: 120px;
+  background-image: url('img/2.0_sangrecopia-removebg-preview.png');
+  background-repeat: repeat-x;
+  background-size: auto 120px;
+  position: absolute;
+  top: 27%;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  margin-top: -2px;
+}
+
+/* 📱 AJUSTE EXCLUSIVO PARA LA BARRA DE SANGRE*/
+
+@media (max-width: 768px) {
+  
+  /* 1. Ajustamos el contenedor principal de la navegación */
+  header, nav, .navbar-container { /* Reemplaza por la clase de tu contenedor del menú */
+    display: flex;
+    flex-direction: column; /* Apila el título 'LOOP' arriba y el menú abajo */
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px; /* Le da espacio interno seguro antes de la barra roja */
+  }
+
+  /* 2. Ordenamos los links del menú en una grilla compacta de dos filas */
+  .menu-links, nav ul, .nav-links { /* Reemplaza por tu clase real de la lista de enlaces */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas limpias */
+    gap: 12px; /* Separación cómoda para tocar con el dedo */
+    justify-items: center;
+    width: 90%;
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* 3. Ajustamos el tamaño del texto para que no desborde */
+  .menu-links a, nav a {
+    font-size: 0.9rem;
+    white-space: nowrap; /* Evita que las palabras se partan en dos renglones */
+  }
+
+  /* 4. Arreglamos el botón del Carrito para que quede centrado abajo del menú */
+  .btn-carrito, #btn-abrir-carrito { 
+    width: 85%; /* Lo hace más ancho y fácil de presionar en pantallas táctiles */
+    margin: 5px auto;
+    text-align: center;
+  }
+
+  /* 5. EMPUJAR LA BARRA DE SANGRE AUTOMÁTICAMENTE */
+  /* Al limpiar las alturas flotantes, este elemento bajará por sí solo */
+  .sangre-borde{ /* Reemplaza por la clase de tu línea decorativa roja */
+    position: relative;
+    width: 110%;
+    clear: both; /* Rompe cualquier elemento flotante previo */
+    margin-top: 5%;
+  }
+}
+
+
+
+
+/* ========================================= */
+/* SECCIÓN HÉROE */
+/* ========================================= */
+.seccion-heroe {
+  padding-top: 200px;
+  padding-bottom: 80px;
+  text-align: center;
+  background: linear-gradient(rgba(11, 5, 18, 0.7), #0b0612), url('img/baner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.logo-principal {
+  max-width: 320px;
+  width: 100%;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(191, 85, 236, 0.5));
+}
+
+.seccion-heroe h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.seccion-heroe p {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  font-size: 16px;
+  color: #a496ba;
+  line-height: 1.6;
+}
+
+.btn-primario {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: #bf55ec;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(191, 85, 236, 0.5);
+  transition: transform 0.2s, background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primario:hover {
+  background-color: #9b30cc;
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* SLIDER AUTOMÁTICO DE PROMOCIONES */
+/* ========================================= */
+
+.contenedor-banner-tren { /* Reemplaza por el nombre real de tu clase */
+  width: 100%;
+  max-width: 1200px; /* Incrementamos el límite para que se expanda al tamaño de tus banners superiores */
+  margin: 40px auto;  /* Centra el elemento en la página y le da aire arriba y abajo */
+  padding: 0 6%;     /* Margen interno de seguridad para que nunca toque los bordes del navegador */
+  box-sizing: border-box;
+}
+
+.contenedor-banner-tren img {
+  
+  width: 100%;
+  height: auto;      /* Clave: mantiene la proporción perfecta de la imagen sin deformarla */
+  border-radius: 16px; /* Bordes redondeados idénticos a los del resto de tu web */
+  border: 2px solid #a855f7; /* Tu morado corporativo encendido */
+  
+  /* Mantiene tu resplandor neón pero expandido al nuevo tamaño */
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); 
+  
+  display: block;
+}
+
+.contenedor-slider {
+  width: 100%;
+  max-width: 1280px;
+  margin: 20px auto 50px auto;
+   padding: 0 6%;     /* Margen interno de seguridad para que nunca toque los bordes del navegador */
+  box-sizing: border-box;
+}
+
+.slider-promociones {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 3px solid #bf55ec;
+  box-shadow: 0 0 30px rgba(191, 85, 236, 0.6), inset 0 0 15px rgba(191, 85, 236, 0.4);
+}
+
+.slider-contenedor {
+  display: flex;
+  width: 300%;
+  animation: carrusel 12s infinite ease-in-out;
+}
+
+.slide {
+  width: 33.333%;
+}
+
+.slide img {
+      /* Clave: mantiene la proporción perfecta de la imagen sin deformarla */
+  border-radius: 16px; /* Bordes redondeados idénticos a los del resto de tu web */
+  border: 2px solid #a855f7; /* Tu morado corporativo encendido */
+  /* Mantiene tu resplandor neón pero expandido al nuevo tamaño */
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); 
+  display: block;
+  width: 100%;
+  height: auto;  
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes carrusel {
+  0% { transform: translateX(0%); }
+  30% { transform: translateX(0%); }
+  33% { transform: translateX(-33.333%); }
+  63% { transform: translateX(-33.333%); }
+  66% { transform: translateX(-66.666%); }
+  96% { transform: translateX(-66.666%); }
+  100% { transform: translateX(0%); }
+}
+
+@media (max-width: 768px) {
+  .contenedor-banner-tren {
+    margin: 25px auto; /* Menos separación vertical en móviles */
+    padding: 0 15px;   /* Margen seguro pero más delgado para pantallas pequeñas */
+  }
+  
+  .contenedor-banner-tren img {
+    border-radius: 10px; /* Redondeado más sutil adecuado para celulares */
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); /* Resplandor escalado para móviles */
+  }
+}
+
+/* ========================================= */
+/* VIDEO CONTAINER */
+/* ========================================= */
+
+
+/* Contenedor con la proporción del rectángulo de tu diseño */
+.video-container {
+  width: 100%;
+  max-width: 550px; /* Ajusta este ancho según el tamaño exacto de tu columna derecha */
+  aspect-ratio: 16 / 9; /* Mantiene la proporción clásica de video de pantalla ancha */
+  background: #000000;
+  border-radius: 12px; /* Esquinas redondeadas idénticas a las de tus secciones */
+  border: 1px solid #261a3d; /* Borde corporativo sutil */
+  overflow: hidden;
+  position: relative;
+  
+  /* Sombra de neón sutil morada para que haga juego con el banner superior */
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1); 
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto opcional: brilla un poco más si el usuario pasa el mouse */
+.video-container:hover {
+  border-color: #a855f7;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.25);
+}
+
+/* Asegura que el iframe o video ocupe todo el espacio de forma limpia */
+.video-container iframe,
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita barras negras si las proporciones varían un poco */
+  border: none;
+}
+
+/* ========================================= */
+/* TIENDA Y PRODUCTOS REGULARES (GRID) */
+/* ========================================= */
+.contenedor-tienda {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.titulo-categoria {
+  font-size: 24px;
+  margin: 40px 0 20px 0;
+  color: #ffffff;
+  border-left: 4px solid #bf55ec;
+  padding-left: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cuadricula-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+
+/* Contenedor principal oscuro */
+.contenedor-misterio {
+    background-color: #0b0712; /* Fondo morado oscuro casi negro */
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 900px;
+    font-family: sans-serif;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Sección de textos */
+.contenido {
+    flex: 1;
+}
+
+/* Título con la barra lateral fucsia */
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 24px 0;
+    padding-left: 12px;
+    border-left: 4px solid #b512af; /* Línea fucsia/morada vibrante */
+    letter-spacing: 0.5px;
+}
+
+/* Párrafo descriptivo */
+.descripcion {
+    font-size: 14px;
+    color: #a3a1a8; /* Gris claro/tenue */
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+/* Texto destacado en cursiva y color brillante */
+.destacado {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    color: #bc1cd4; /* Morado/fucsia brillante */
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Cuadro derecho para la imagen o captura */
+.cuadro-captura {
+    flex: 1;
+    border: 1px solid #4a2870; /* Borde morado apagado */
+    border-radius: 6px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+/* Texto de marcador de posición dentro del cuadro */
+.cuadro-captura span {
+    font-size: 12px;
+    color: #554866;
+    letter-spacing: 1px;
+}
+
+
+/* Tarjetas de la tienda estándar */
+.cuadricula-productos .tarjeta-producto {
+  position: relative;
+  background-color: #140d21;
+  border: 1px solid #281b3f;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.cuadricula-productos .tarjeta-producto:hover {
+  transform: translateY(-5px);
+  border-color: #bf55ec;
+  box-shadow: 0 5px 20px rgba(191, 85, 236, 0.3);
+}
+
+
+
+.imagen-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #1e1430;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #4a3765;
+  margin-bottom: 15px;
+  border: 1px solid #3b2455;
+}
+
+.imagen-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tarjeta-producto h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+
+
+.tarjeta-producto p {
+  font-size: 14px;
+  color: #cbd5e1; /* Un gris blanquecino mucho más legible */
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+
+.precio-compra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #281b3f;
+}
+
+.precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00ff88;
+}
+
+.btn-comprar {
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 1px solid #bf55ec;
+  color: #bf55ec;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-comprar:hover {
+  background-color: #bf55ec;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(191, 85, 236, 0.5);
+}
+
+/* ========================================= */
+/* SLIDER COVERFLOW 3D (ISOLADO) */
+/* ========================================= */
+  /* Variables de Color Corporativo */
+:root {
+  --bg-main: #0a0612;
+  --bg-card: #160f24;
+  --border-color: #261a3d;
+  --text-white: #ffffff;
+  --text-gray: #9ca3af;
+  --accent-green: #00e676;
+  --accent-purple: #a855f7;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-white);
+  font-family: 'Poppins', sans-serif;
+}
+
+.store-section {
+  padding: 40px 6%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.sliders-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 40px;
+}
+
+.slider-wrapper {
+  background: #160f24;
+  border: 1px solid #261a3d;
+  border-radius: 16px;
+  padding: 50px 20px;
+  overflow: hidden; /* Corta de manera idéntica los dos extremos de las tarjetas */
+  padding-top: 20px;
+  padding-bottom: 35px; /* Crea el espacio perfecto abajo para que no se pegue al borde */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* 👇 EFECTO HOVER: ILUMINACIÓN DE LA VENTANA DEL SLIDER 👇 */
+.slider-wrapper:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  
+  /* Crea un resplandor suave y difuminado alrededor de toda la ventana */
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.15);
+}
+
+.slider-header {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ffffff;
+  
+  /* CAMBIO: Reducimos el margen superior para subirlo y dejamos espacio controlado abajo */
+  margin-top: 5px;     /* Lo empuja un poco más hacia el borde superior */
+  margin-bottom: 25px; /* Espacio limpio antes de que empiecen las tarjetas */
+}
+
+.track-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Base del riel de movimiento */
+.carousel-track {
+  display: flex;
+  width: max-content; /* Permite que las tarjetas se alineen infinitamente a lo largo */
+  
+}
+
+/* ANIMACIÓN HACIA LA IZQUIERDA (Avatares) */
+.marquee-left {
+  animation: scrollLeft 25s linear infinite;
+}
+
+/* ANIMACIÓN HACIA LA DERECHA (Vestuarios) */
+.marquee-right {
+  animation: scrollRight 25s linear infinite;
+}
+
+/* Clases para pausar la animación por completo al interactuar */
+.paused {
+  animation-play-state: paused !important;
+}
+
+/* Keyframes nativos para rendimiento suave sin cortes */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Se resetea justo a la mitad del contenido duplicado */
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Estilo de Tarjetas */
+.card {
+  min-width: 220px;
+  max-width: 220px;
+  margin: 0 15px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+/* Estilo de Tarjeta Seleccionada por el Usuario */
+.card.selected {
+  transform: scale(1.06);
+  border-color: #a855f7;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.img-container {
+  width: 100%;
+  height: 180px;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contenedor de la información intermedia */
+.card-info {
+  margin-top: 14px;
+  text-align: left; /* Alineación a la izquierda se ve más limpia que centrada */
+  padding: 0 4px;
+}
+
+/* Título Principal del Elemento */
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Si el nombre es muy largo, añade '...' elegantemente */
+  letter-spacing: 0.5px;
+}
+
+/* Subtítulos (Creadores o Colecciones) */
+.card-subtitle {
+  font-size: 0.8rem;
+  color: #9ca3af; /* Gris suave para que no compita con el título */
+  margin: 0;
+  font-weight: 400;
+}
+
+.author-name {
+  color: #bc7af9; /* Destaca el creador con tu morado corporativo suave */
+}
+
+/* Contenedor inferior para Precio o Etiquetas */
+.card-footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start; /* Alineado con el texto */
+  padding: 0 4px;
+}
+
+/* Estilo para la etiqueta PREMIUM */
+.tag-premium {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a855f7; /* Morado encendido corporativo */
+  background: rgba(168, 85, 247, 0.15); /* Fondo sutil morado */
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Estilo para el PRECIO */
+.card-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #00e676; /* Verde neón brillante para resaltar el costo */
+  text-shadow: 0 0 10px rgba(0, 230, 118, 0.2); /* Sutil destello de luz */
+}
+
+.card-footer {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.btn-comprar {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #a855f7; /* Tu morado corporativo */
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-comprar:hover {
+  background: #a855f7;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Efecto al hacer clic */
+.btn-comprar:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================
+   📱 CONFIGURACIÓN PARA CELULARES Y TABLETS
+   ========================================== */
+@media (max-width: 768px) {
+  
+  /* 1. Pasamos de 2 columnas a 1 sola columna (un slider arriba y otro abajo) */
+  .sliders-container {
+    grid-template-columns: 1fr; /* Apila los bloques verticalmente */
+    gap: 25px; /* Reduce un poco la separación para aprovechar pantalla */
+    padding: 0 10px;
+  }
+
+  /* 2. Ajustamos las ventanas para que no queden pegadas a los bordes del celular */
+  .slider-wrapper {
+    padding: 20px 10px; /* Menos espacio interno para dar más área a las tarjetas */
+    max-width: 100%;    /* Permite que ocupe todo el ancho del teléfono */
+  }
+
+  /* 3. Ajuste de tamaño de tarjetas para pantallas pequeñas */
+  .card {
+    min-width: 180px; /* Hacemos las tarjetas un poco más pequeñas en celular */
+    max-width: 180px;
+    margin: 0 8px;    /* Pegamos un tris más las tarjetas entre sí */
+    padding: 12px;
+  }
+
+  /* 4. Achicamos las imágenes para mantener la proporción estética */
+  .img-container {
+    height: 140px; /* Reduce la altura del cuadro del avatar en el celular */
+  }
+
+  /* 5. Ajustes de textos y botones para que quepan bien */
+  .slider-header {
+    font-size: 1.1rem; /* Títulos un poco más pequeños */
+    margin-bottom: 15px;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  .btn-comprar {
+    padding: 6px 12px; /* Botón de comprar más compacto pero fácil de tocar */
+    font-size: 0.8rem;
+  }
+}
+
+
+/* ========================================= */
+/* VENTANA EMERGENTE DEL CARRITO (MODAL) */
+/* ========================================= */
+.modal-carrito {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.contenido-carrito {
+  background: #140d21;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #bf55ec;
+  width: 90%;
+  max-width: 450px;
+  color: white;
+  box-shadow: 0 0 30px rgba(191, 85, 236, 0.5);
+}
+
+.contenido-carrito h2 {
+  border-bottom: 1px solid #3b2455;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  color: #bf55ec;
+}
+
+.lista-items {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 5px;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #23123a;
+}
+
+.item-carrito button {
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* ========================================= */
+/* IA INTERACTIVA DE LOOP */
+/* ========================================= */
+.loop-ia {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 350px;
+  max-width: calc(100vw - 30px);
+  background: #10091a;
+  border: 2px solid #bf55ec;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(191, 85, 236, 0.35);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.ia-cabecera {
+  background: linear-gradient(135deg, #1e0d30, #0d0716);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #4a3765;
+}
+
+.ia-titulo {
+  color: #bf55ec;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ia-estado {
+  color: #6dff91;
+  font-size: 12px;
+}
+
+/* Efecto de pulso para el estado de la IA */
+.ia-estado {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ia-estado::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #6dff91;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px #6dff91;
+  animation: pulsoEstado 2s infinite;
+}
+
+@keyframes pulsoEstado {
+  0% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 12px #6dff91; }
+  100% { opacity: 0.4; transform: scale(0.9); }
+}
+
+
+/* Distribución de las dos columnas principales */
+.avatars-atuendos-seccion {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: #0b0d19; /* Fondo oscuro general */
+}
+
+.contenedor-slider {
+  flex: 1;
+  width: 50%;
+  position: relative;
+}
+
+/* Ajustes del contenedor de Swiper */
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Tamaño de las tarjetas individuales */
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 260px; /* Ajusta el ancho de tus tarjetas */
+  height: 360px; /* Ajusta el alto de tus tarjetas */
+}
+
+/* Contenido interno estilo libro/tarjeta de tu imagen */
+.tarjeta-contenido {
+  width: 100%;
+  height: 100%;
+  background: #141729; /* Color de fondo de la tarjeta */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px; /* Bordes redondeados como tu ejemplo */
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.tarjeta-contenido img {
+  width: 80%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* Personalización de flechas para que luzcan circulares y limpias */
+.swiper-button-prev, .swiper-button-next {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 20px !important;
+}
+
+/* Contenedor Principal y Columnas */
+.seccion-juego {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.columna-slider {
+  flex: 1;
+  width: 50%;
+  min-width: 300px;
+}
+
+.swiper {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  width: 280px; 
+  height: 380px; 
+}
+
+/* Diseño de la Tarjeta */
+.tarjeta {
+  width: 100%;
+  height: 100%;
+  background: #141729;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column; /* Alinea la imagen arriba y el texto abajo */
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: sans-serif;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Control estricto de la imagen */
+.tarjeta-img {
+  width: 100%;
+  height: 75%; /* Ocupa la mayor parte de la tarjeta */
+  object-fit: contain; /* Evita que la imagen se estire o se deforme */
+  pointer-events: none; /* Evita que el usuario arrastre la imagen por error */
+}
+
+/* Texto de la tarjeta */
+.tarjeta-titulo {
+  margin: 10px 0 0 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Flechas Circulares */
+.swiper-button-prev, .swiper-button-next {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  font-size: 18px !important;
+}
+/* Layout para ordenar los dos bloques uno al lado del otro */
+.seccion-doble-carrusel {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* El bloque limpio que encontraste */
+.sidebar-widget-book {
+    flex: 1;
+    min-width: 280px;
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-widget-book .widget-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 8px;
+}
+
+/* Área del Slider con perspectiva */
+.coverflow-slider-container {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+}
+
+.coverflow-track {
+    position: relative;
+    width: 100px;
+    height: 140px;
+    transform-style: preserve-3d;
+}
+
+.coverflow-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0) scale(0.6) rotateY(0);
+}
+
+.widget-book-cover {
+    background-color: #1e293b;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.widget-book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- ESTADOS DEL CARRUSEL --- */
+.coverflow-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1.05);
+    z-index: 5;
+}
+
+.coverflow-slide.prev {
+    opacity: 0.4;
+    visibility: visible;
+    transform: translateX(-65px) scale(0.8) rotateY(25deg);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.coverflow-slide.next {
+    opacity: 0.4;
+    visibility: visible;
+    transform: translateX(65px) scale(0.8) rotateY(-25deg);
+    z-index: 3;
+    cursor: pointer;
+}
+
+/* Flechas */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s, color 0.2s;
+}
+
+.slider-arrow:hover { background: #0066ff; }
+.prev-arrow { left: 5px; }
+.next-arrow { right: 5px; }
+
+/* Tipografías e Información */
+.widget-book-details h4 { color: #ffffff; font-size: 1rem; margin: 0 0 4px 0; }
+.widget-book-author { color: #64748b; font-size: 0.85rem; margin: 0 0 10px 0; }
+.widget-book-price { color: #00d2ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px; }
+
+
+.ia-mensajes {
+  height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+  background: #0d0716;
+}
+
+.ia-mensaje {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 85%;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.ia-bot {
+  background: #1d1230;
+  color: #d9cbe8;
+  border-left: 3px solid #bf55ec;
+  margin-right: auto;
+}
+
+.ia-usuario {
+  background: #5b2075;
+  color: white;
+  margin-left: auto;
+}
+
+.ia-input-area {
+  display: flex;
+  padding: 10px;
+  gap: 8px;
+  background: #140d21;
+  border-top: 1px solid #3b2455;
+}
+
+.ia-input {
+  flex: 1;
+  padding: 10px;
+  background: #1e1430;
+  color: white;
+  border: 1px solid #4a3765;
+  border-radius: 6px;
+  outline: none;
+}
+
+.ia-input:focus {
+  border-color: #bf55ec;
+}
+
+.ia-enviar {
+  padding: 10px 14px;
+  background: #bf55ec;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ia-boton-abrir {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #bf55ec;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  box-shadow: 0 0 25px rgba(191, 85, 236, 0.6);
+  z-index: 9998;
+}
+
+.ia-cerrar {
+  background: none;
+  border: none;
+  color: #a496ba;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ========================================= */
+/* PIE DE PÁGINA */
+/* ========================================= */
+.pie-pagina {
+  background-color: #07030c;
+  padding: 50px 20px 20px 20px;
+  margin-top: 80px;
+  border-top: 1px solid #140d21;
+}
+
+.columnas-pie {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.columna h3 {
+  color: #bf55ec;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.columna a {
+  display: block;
+  color: #a496ba;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.columna a:hover {
+  color: #ffffff;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #4a3765;
+}
+
+/* ========================================= */
+/* RESPONSIVO (MÓVILES) */
+/* ========================================= */
+@media (max-width: 768px) {
+  .sitio-header {
+    position: relative;
+  }
+
+  .menu-navegacion {
+    flex-direction: column;
+    padding: 12px 10px;
+    gap: 12px;
+  }
+
+  .menu-navegacion .enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 15px;
+    width: 100%;
+  }
+
+  .menu-navegacion .enlaces a {
+    margin-left: 0;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .menu-navegacion .enlaces .btn-carrito {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  .seccion-heroe {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .logo-principal {
+    max-width: 200px;
+  }
+
+  .seccion-heroe h1 {
+    font-size: 22px;
+  }
+
+  .sangre-borde {
+    height: 60px;
+    background-size: auto 60px;
+  }
+
+  .cuadricula-productos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  #reportes {
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  #form-reporte {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .contenido-carrito {
+    width: 95%;
+    max-height: 85vh;
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  .loop-ia {
+    right: 10px;
+    bottom: 10px;
+    width: calc(100vw - 20px);
+  }
+
+  .ia-boton-abrir {
+    right: 15px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu-navegacion .enlaces a {
+    font-size: 12px;
+  }
+
+  .btn-primario, .btn-comprar {
+    width: 100%;
+    text-align: center;
+  }
+}

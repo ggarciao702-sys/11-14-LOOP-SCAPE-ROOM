@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOOP - Estudios de Videojuegos de Terror</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://jsdelivr.net" />
+<script src="https://jsdelivr.net"></script>
+
+</head>
+
+<body>
+
+  <!-- CABECERA Y MENÚ DE NAVEGACIÓN                   -->
+
+  <header class="sitio-header">
+    <nav class="menu-navegacion">
+      <a href="#inicio" class="logo">LOOP</a>
+
+      <div class="enlaces">
+        <a href="#inicio">Inicio</a>
+        <a href="#juego">El Juego</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#reportes">Soporte</a>
+        <a href="#" class="btn-carrito" id="btn-abrir-carrito">🛒 Carrito (0)</a>
+      </div>
+
+      <div class="sangre-borde"></div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL                                     -->
+
+  <main>
+
+    
+    <!-- SECCIÓN HÉROE                                          -->
+
+
+
+    <section id="inicio" class="seccion-heroe">
+      <div class="heroe-contenido">
+        <img src="img/222.png" alt="LOOP Logo" class="logo-principal">
+        <h1>CONSIGUE EL JUEGO COMPLETO Y CONTENIDO EXCLUSIVO</h1>
+        <p>
+          Terror, misterio y experiencias únicas en una sola plataforma.
+          Explora niveles malditos y personaliza tu identidad.
+        </p>
+        <a href="#tienda" class="btn-primario">Explorar la Tienda</a>
+      </div>
+    </section>
+
+    
+
+
+
+<!-- CAJITAS DE ELEMENTOS DE TERROR EN EL FONDO -->
+<div class="decoraciones-terror">
+  <!-- Caja 1: Esquina superior izquierda (atrás del título) -->
+  <div class="caja-terror pos-arriba-izquierda">
+    <img src="img\images__2_-removebg-preview.png" alt="Elemento de terror">
+  </div>
+
+  <!-- Caja 2: Lateral derecho (por la zona de los niveles) -->
+  <div class="caja-terror pos-medio-derecha">
+    <img src="img\images__2_-removebg-preview.png" alt="Elemento de terror">
+  </div>
+
+  <!-- Caja 3: Esquina inferior izquierda (cerca del pie de página) -->
+  <div class="caja-terror pos-abajo-izquierda">
+    <img src="img\images__2_-removebg-preview.png" alt="Elemento de terror">
+  </div>
+</div>
+
+
+
+    <!-- SLIDER AUTOMÁTICO DE PROMOCIONES                      -->
+
+
+    <div class="contenedor-slider">
+      <div class="slider-promociones">
+        <div class="slider-contenedor">
+          <div class="slide"><img src="img/Diseño sin título (8).png" alt="Promoción 1 - Descuento Especial"></div>
+          <div class="slide"><img src="img/ChatGPT Image 11 sept 2026, 07_20_22.png" alt="Promoción 2 - Nuevo Capítulo"></div>
+          <div class="slide"><img src="img/ChatGPT Image 11 sept 2026, 07_21_55.png" alt="Promoción 3 - Atuendos Exclusivos"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN EL JUEGO / LORE                            -->
+
+
+
+
+    <section id="juego" class="contenedor-tienda" style="background-color: #0d0716; padding: 60px 20px; border-radius: 8px; margin-top: 20px; border: 1px dashed #23123a;">
+      <h2 class="titulo-categoria">El Misterio de LOOP</h2>
+      <div style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+        <div style="flex: 1; min-width: 280px;">
+          <p style="color: #a496ba; font-size: 16px; line-height: 1.8; margin-bottom: 15px;">
+            Estás atrapado en una locación cambiante de bloques infinitos.
+            Cada rincón esconde una pista y cada pasillo te acerca a una
+            entidad que vigila tus movimientos en la oscuridad.
+          </p>
+          <p style="color: #bf55ec; font-weight: bold; font-size: 16px; font-style: italic;">
+            "Si te atrapa, el tiempo se reinicia. Usa tu vida anterior para resolver los acertijos y romper el bucle."
+          </p>
+        </div>
+
+        <div class="video-container">
+  <video autoplay loop muted playsinline>
+    <source src="IMG/Video sin título (2).mp4" type="video/mp4">
+    Tu navegador no soporta videos incrustados.
+  </video>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE TIENDA                                              -->
+
+
+
+
+    <section id="tienda" class="contenedor-tienda">
+      <h2 class="titulo-categoria">Niveles y Expansiones</h2>
+
+      <div class="cuadricula-productos">
+        <div class="tarjeta-producto">
+          <div class="imagen-placeholder">
+            <img src="img/nvl1.png" alt="Imagen del Nivel 1 - El Origen">
+          </div>
+          <h3>Capítulo II: Uno mas</h3>
+          <p>Desbloquea el juego principal y los primeros misterios de LOOP.</p>
+          <div class="precio-compra">
+            <span class="precio">$9.99 USD</span>
+            <button class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+
+        <div class="tarjeta-producto">
+          <div class="imagen-placeholder">
+            <img src="img/WhatsApp Image 2026-09-10 at 11.52.40 PM.jpeg" alt="Imagen del Nivel 2 - Pasillos Vacíos">
+          </div>
+          <h3>El Desastre</h3>
+          <p>Un nuevo set de niveles de terror psicológico extremo "¿Podrias sobrevivir?".</p>
+          <div class="precio-compra">
+            <span class="precio">$4.99 USD</span>
+            <button class="btn-comprar">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER COVERFLOW 3D                                               -->
+
+
+<section class="store-section">
+  <h2 class="titulo-categoria">AVATARS Y ATUENDOS</h2>
+
+  <div class="sliders-container">
+    
+    <!-- SLIDER 1: AVATARES (Hacia la Izquierda) -->
+    <div class="slider-wrapper">
+      <h3 class="slider-header">Mis Avatares</h3>
+      <div class="carousel-container" id="carousel-avatares">
+        <div class="track-container">
+          <div class="carousel-track marquee-left">
+            <!-- 6 Tarjetas Originales -->
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (8).png"></div><div class="card-info"></div><h4 class="card-title">Avatar Guerrero</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (9).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 2</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (10).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 3</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (11).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 4</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (12).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 5</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (13).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 6</h4><span class="tag-premium">Premium</span></div>
+            
+            <!-- Duplicado idéntico exacto para el bucle infinito -->
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (8).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 1</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (9).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 2</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (10).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 3</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (11).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 4</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (12).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 5</h4><span class="tag-premium">Premium</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/Diseño sin título (13).png"></div><div class="card-info"></div><h4 class="card-title">Avatar 6</h4><span class="tag-premium">Premium</span></div>
+          </div>
+        </div>
+      
+         <button class="btn-comprar" data-title="Avatar Guerrero" data-price="0.00">Comprar</button>
+      </div>
+    </div>
+
+    <!-- SLIDER 2: VESTUARIOS (Hacia la Derecha) -->
+    <div class="slider-wrapper">
+      <h3 class="slider-header">Mis Vestuarios</h3>
+      <div class="carousel-container" id="carousel-vestuarios">
+        <div class="track-container">
+          <div class="carousel-track marquee-right">
+            <!-- 6 Tarjetas Originales -->
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 06_40_27.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 1</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_01.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 2</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_012.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 3</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_013.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 4</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_014.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 5</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_015.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 6</h4><span class="card-price">$15.00</span></div>
+
+            <!-- Duplicado idéntico exacto para el bucle infinito -->
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 06_40_27.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 1</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_01.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 2</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_012.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 3</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_013.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 4</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_014.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 5</h4><span class="card-price">$15.00</span></div>
+            <div class="card" onclick="selectCard(this)"><div class="img-container"><img src="img/ChatGPT Image 11 sept 2026, 07_06_015.png"></div><div class="card-info"></div><h4 class="card-title">Atuendo 6</h4><span class="card-price">$15.00</span></div>
+          </div>
+          
+        </div>
+         <button class="btn-comprar" data-title="Avatar Guerrero" data-price="0.00">Comprar</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  </div>
+</section>
+<script>
+function selectCard(clickedCard) {
+  // Encuentra el carrusel específico donde se hizo clic
+  const track = clickedCard.closest('.carousel-track');
+  
+  // Detiene por completo la animación de ese carrusel para siempre
+  track.classList.add('paused');
+  
+  // Remueve la selección previa de las tarjetas de ese carrusel específico
+  const siblingCards = track.querySelectorAll('.card');
+  siblingCards.forEach(card => card.classList.remove('selected'));
+  
+  // Marca la tarjeta actual como seleccionada de forma estética
+  clickedCard.classList.add('selected');
+}
+// Asegúrate de que tu variable cardWidth dentro de la función se calcule de esta forma:
+const computedStyle = window.getComputedStyle(cards[0]);
+const marginRight = parseFloat(computedStyle.marginRight) || 0;
+const marginLeft = parseFloat(computedStyle.marginLeft) || 0;
+
+// Esto detectará si mide 220px en PC o 180px en Celular automáticamente
+const cardWidth = cards[0].getBoundingClientRect().width + marginRight + marginLeft;
+
+
+</script>
+
+</section>
+
+
+    <!-- CENTRO DE AYUDA Y REPORTES                               -->
+
+    <section id="reportes" class="contenedor-tienda" style="margin-top: 60px;">
+      <h2 class="titulo-categoria">Centro de Ayuda / Problemas y Sugerencias</h2>
+
+      <form action="https://formspree.io/f/mvkodqvj" method="POST" id="form-reporte" style="background-color: #140d21; padding: 30px; border-radius: 8px; border: 1px solid #281b3f; max-width: 600px; margin: 20px auto 0 auto;">
+        <div style="margin-bottom: 15px;">
+          <label style="display: block; margin-bottom: 5px; color: #ffffff; font-weight: bold; font-size: 14px;" for="reporte-usuario">Usuario de Roblox / Correo de contacto:</label>
+          <input name="usuario" type="text" id="reporte-usuario" placeholder="Ej: TerrorPlayer123 o usuario@mail.com" required style="width: 100%; padding: 10px; background-color: #1e1430; border: 1px solid #4a3765; border-radius: 4px; color: #ffffff;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="display: block; margin-bottom: 5px; color: #ffffff; font-weight: bold; font-size: 14px;" for="reporte-tipo">Tipo de Mensaje:</label>
+          <select id="reporte-tipo" name="tipo_reporte" style="width: 100%; padding: 10px; background-color: #1e1430; border: 1px solid #4a3765; border-radius: 4px; color: #ffffff;">
+            <option value="Bug / Error Técnico">Reportar Bug / Error Técnico</option>
+            <option value="Problema con Compras">Problema con Compras o Pagos</option>
+            <option value="Sugerencia de Mejora">Sugerencia de Mejora</option>
+            <option value="Otro">Otro problema</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="display: block; margin-bottom: 5px; color: #ffffff; font-weight: bold; font-size: 14px;" for="reporte-descripcion">Detalles de tu mensaje:</label>
+          <textarea name="descripcion" id="reporte-descripcion" rows="4" placeholder="Cuéntanos con detalle tu problema, falla encontrada o sugerencia para mejorar el juego..." required style="width: 100%; padding: 10px; background-color: #1e1430; border: 1px solid #4a3765; border-radius: 4px; color: #ffffff; resize: none;"></textarea>
+        </div>
+
+        <button type="submit" class="btn-comprar" style="width: 100%; padding: 12px;">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie-pagina">
+    <div class="columnas-pie">
+      <div class="columna">
+        <h3>| LEGAL</h3>
+        <a href="#">Términos de Venta</a>
+        <a href="#">Política de Privacidad</a>
+      </div>
+      <div class="columna">
+        <h3>| COMUNIDAD</h3>
+        <a href="#">Discord Oficial</a>
+        <a href="#reportes">Soporte Técnico</a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 LOOP Enigmas de Videojuegos. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- MODAL DEL CARRITO -->
+  <div class="modal-carrito" id="modal-carrito">
+    <div class="contenido-carrito">
+      <h2>Tu Carrito de Compras</h2>
+      <div class="lista-items" id="lista-carrito"></div>
+      <p style="font-size: 18px; margin-bottom: 15px;"><strong>Total:</strong> $<span id="total-carrito">0.00</span> USD</p>
+      <button id="btn-checkout" class="btn-primario" style="width:100%; margin-bottom: 10px;">Finalizar Compra</button>
+      <button id="btn-cerrar-carrito" class="btn-comprar" style="width:100%;">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- IA INTERACTIVA -->
+  <button class="ia-boton-abrir" id="abrirIA" title="Abrir IA de LOOP">👁️</button>
+
+  <div class="loop-ia" id="loopIA" style="display: none;">
+    <div class="ia-cabecera">
+      <div>
+        <div class="ia-titulo">👁️ LOOP IA</div>
+        <div class="ia-estado">● Sistema activo</div>
+      </div>
+      <button class="ia-cerrar" id="cerrarIA">×</button>
+    </div>
+
+    <div class="ia-mensajes" id="iaMensajes">
+      <div class="ia-mensaje ia-bot">
+        👁️ Bienvenido al sistema LOOP.<br><br>
+        Soy la IA encargada de ayudarte a descubrir los secretos del juego.
+      </div>
+    </div>
+
+    <div class="ia-input-area">
+      <input type="text" id="iaInput" class="ia-input" placeholder="Escribe tu pregunta...">
+      <button class="ia-enviar" id="iaEnviar">➤</button>
+    </div>
+  </div>
+
+  <!-- LÓGICA JAVASCRIPT -->
+  <script>
+    let carrito = [];
+
+document.querySelectorAll('.btn-comprar').forEach((boton) => {
+  if (boton.closest('#form-reporte') || boton.id === 'btn-cerrar-carrito') return;
+
+  boton.addEventListener('click', (e) => {
+    const tarjeta = e.target.closest('.tarjeta-producto');
+    if (!tarjeta) return;
+
+    const titulo = tarjeta.querySelector('h3').innerText;
+    const precioTexto = tarjeta.querySelector('.precio').innerText;
+    const precio = parseFloat(precioTexto.replace('$', '').replace(' USD', ''));
+
+    carrito.push({ titulo, precio });
+    actualizarCarrito();
+    alert(`✔ "${titulo}" agregado al carrito.`);
+  });
+});
+
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  actualizarCarrito();
+}
+
+function actualizarCarrito() {
+  const btnCarrito = document.getElementById('btn-abrir-carrito');
+  const listaCarrito = document.getElementById('lista-carrito');
+  const totalCarrito = document.getElementById('total-carrito');
+
+  btnCarrito.innerText = `🛒 Carrito (${carrito.length})`;
+  listaCarrito.innerHTML = '';
+  let total = 0;
+
+  if (carrito.length === 0) {
+    listaCarrito.innerHTML = '<p style="color:#a496ba; text-align:center;">El carrito está vacío.</p>';
+  } else {
+    carrito.forEach((prod, index) => {
+      total += prod.precio;
+      const item = document.createElement('div');
+      item.className = 'item-carrito';
+      
+      const info = document.createElement('div');
+      info.innerHTML = `
+        <div style="font-weight:bold;">${prod.titulo}</div>
+        <div style="color:#bf55ec; font-size:13px;">$${prod.precio.toFixed(2)} USD</div>
+      `;
+
+      const btnEliminar = document.createElement('button');
+      btnEliminar.textContent = 'X';
+      btnEliminar.addEventListener('click', () => eliminarDelCarrito(index));
+
+      item.appendChild(info);
+      item.appendChild(btnEliminar);
+      listaCarrito.appendChild(item);
+    });
+  }
+
+  totalCarrito.innerText = total.toFixed(2);
+}
+
+const modalCarrito = document.getElementById('modal-carrito');
+document.getElementById('btn-abrir-carrito').addEventListener('click', (e) => {
+  e.preventDefault();
+  modalCarrito.style.display = 'flex';
+});
+
+document.getElementById('btn-cerrar-carrito').addEventListener('click', () => {
+  modalCarrito.style.display = 'none';
+});
+
+document.getElementById('btn-checkout').addEventListener('click', () => {
+  if (carrito.length === 0) {
+    alert('Tu carrito está vacío. Agrega productos de la tienda.');
+    return;
+  }
+  alert('¡Compra procesada con éxito! Revisa tu inventario dentro del juego.');
+  carrito = [];
+  actualizarCarrito();
+  modalCarrito.style.display = 'none';
+});
+
+const abrirIA = document.getElementById("abrirIA");
+const cerrarIA = document.getElementById("cerrarIA");
+const loopIA = document.getElementById("loopIA");
+const iaInput = document.getElementById("iaInput");
+const iaEnviar = document.getElementById("iaEnviar");
+const iaMensajes = document.getElementById("iaMensajes");
+
+abrirIA.addEventListener("click", () => {
+  loopIA.style.display = "block";
+  abrirIA.style.display = "none";
+  iaInput.focus();
+});
+
+cerrarIA.addEventListener("click", () => {
+  loopIA.style.display = "none";
+  abrirIA.style.display = "block";
+});
+
+function agregarMensaje(texto, tipo) {
+  const mensaje = document.createElement("div");
+  mensaje.classList.add("ia-mensaje", tipo === "usuario" ? "ia-usuario" : "ia-bot");
+  mensaje.textContent = texto;
+  iaMensajes.appendChild(mensaje);
+  iaMensajes.scrollTop = iaMensajes.scrollHeight;
+}
+
+function responderIA(pregunta) {
+  const texto = pregunta.toLowerCase();
+  if (texto.includes("hola") || texto.includes("buenas")) return "👁️ Hola, jugador. Bienvenido al bucle. ¿Qué deseas consultar?";
+  if (texto.includes("precio") || texto.includes("cuesta")) return "💰 Revisa la sección Tienda para ver los precios actualizados.";
+  if (texto.includes("comprar") || texto.includes("carrito")) return "🛒 Agrega un ítem desde la tienda y pulsa en el botón superior de Carrito para completar la transacción.";
+  return "👁️ Esa información sigue bajo sombras...";
+}
+
+function enviarMensaje() {
+  const pregunta = iaInput.value.trim();
+  if (pregunta === "") return;
+
+  agregarMensaje(pregunta, "usuario");
+  iaInput.value = "";
+
+  setTimeout(() => {
+    agregarMensaje(responderIA(pregunta), "bot");
+  }, 500);
+}
+
+iaEnviar.addEventListener("click", enviarMensaje);
+iaInput.addEventListener("keydown", (e) => { if (e.key === "Enter") enviarMensaje(); });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tarjetas = Array.from(document.querySelectorAll('.coverflow-track .tarjeta-producto'));
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+
+  if (tarjetas.length === 0) return;
+
+  let currentIndex = Math.floor(tarjetas.length / 2);
+
+  function actualizarCoverflow() {
+    tarjetas.forEach((tarjeta, index) => {
+      const offset = index - currentIndex;
+      const absOffset = Math.abs(offset);
+
+      if (offset === 0) {
+        tarjeta.style.transform = `translate(-50%, -50%) translateX(0px) translateZ(160px) rotateY(0deg)`;
+        tarjeta.style.opacity = '1';
+        tarjeta.style.zIndex = '100';
+        tarjeta.style.filter = 'blur(0px) brightness(1)';
+        tarjeta.style.pointerEvents = 'auto';
+      } else if (offset < 0) {
+        const translateX = offset * 110 - 60;
+        const translateZ = -absOffset * 100;
+        const rotateY = 35;
+
+        tarjeta.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`;
+        tarjeta.style.opacity = Math.max(0.2, 1 - absOffset * 0.25).toString();
+        tarjeta.style.zIndex = (100 - absOffset).toString();
+        tarjeta.style.filter = `blur(${absOffset * 1.5}px) brightness(${1 - absOffset * 0.2})`;
+        tarjeta.style.pointerEvents = 'auto';
+      } else {
+        const translateX = offset * 110 + 60;
+        const translateZ = -absOffset * 100;
+        const rotateY = -35;
+
+        tarjeta.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`;
+        tarjeta.style.opacity = Math.max(0.2, 1 - absOffset * 0.25).toString();
+        tarjeta.style.zIndex = (100 - absOffset).toString();
+        tarjeta.style.filter = `blur(${absOffset * 1.5}px) brightness(${1 - absOffset * 0.2})`;
+        tarjeta.style.pointerEvents = 'auto';
+      }
+    });
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (currentIndex < tarjetas.length - 1) {
+      currentIndex++;
+      actualizarCoverflow();
+    }
+  });
+
+  btnPrev.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      actualizarCoverflow();
+    }
+  });
+
+  tarjetas.forEach((tarjeta, index) => {
+    tarjeta.addEventListener('click', (e) => {
+      if (e.target.classList.contains('btn-comprar')) return;
+      if (currentIndex !== index) {
+        currentIndex = index;
+        actualizarCoverflow();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' && currentIndex > 0) {
+      currentIndex--;
+      actualizarCoverflow();
+    } else if (e.key === 'ArrowRight' && currentIndex < tarjetas.length - 1) {
+      currentIndex++;
+      actualizarCoverflow();
+    }
+  });
+
+  actualizarCoverflow();
+});
+// 🛒 SISTEMA DE AGREGADO CON ATRIBUTOS DIRECTOS (INFALIBLE)
+document.body.addEventListener('click', (e) => {
+  const boton = e.target;
+  
+  // Filtro de seguridad para el botón de compra
+  if (!boton.classList.contains('btn-comprar')) return;
+  if (boton.closest('#form-reporte') || boton.id === 'btn-cerrar-carrito') return;
+
+  e.stopPropagation(); // Evita que se congele el movimiento por error
+
+  let titulo = "";
+  let precio = 0;
+
+  // 1. Verificamos primero si el botón ya tiene los datos incrustados directamente
+  if (boton.hasAttribute('data-title')) {
+    titulo = boton.getAttribute('data-title');
+    precio = parseFloat(boton.getAttribute('data-price')) || 0;
+  } 
+  // 2. Si no los tiene (por si acaso es del Coverflow antiguo), usamos el plan de respaldo original
+  else {
+    const tarjetaVieja = boton.closest('.tarjeta-producto');
+    if (!tarjetaVieja) return;
+
+    const elementoTitulo = tarjetaVieja.querySelector('h3');
+    titulo = elementoTitulo ? elementoTitulo.innerText : 'Producto';
+
+    const elementoPrecio = tarjetaVieja.querySelector('.precio');
+    if (elementoPrecio) {
+      const precioTexto = elementoPrecio.innerText;
+      precio = parseFloat(precioTexto.replace('$', '').replace(' USD', '')) || 0;
+    }
+  }
+
+  // Ejecución limpia e idéntica a tus otros productos
+  carrito.push({ titulo, precio });
+  actualizarCarrito();
+  alert(`✔ "${titulo}" agregado al carrito.`);
+});
+
+
+  </script>
+</body>
+</html>
