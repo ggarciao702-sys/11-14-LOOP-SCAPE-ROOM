@@ -16,6 +16,6 @@ SARA ESTEFANY MONTAÑO ECHEVERRY
 - **Lenguaje:** JavaScript 
 - **Integrantes del grupo:**
   - Integrante 1 (Sara Estefany Montaño Echeverry)
-  - Integrante 2 (Gabriela Garcia Osuna)
+  - Integrante 2 (Gabriela Garcia Osuna).
 
 
