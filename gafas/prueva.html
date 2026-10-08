@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeón Realista Minecraft VR - Versión Profesional</title>
+  <!-- Cargamos la librería oficial estable de A-Frame -->
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  
+  
+  
+  <script>
+    // Sistema de movimiento calibrado con límites perimetrales estables
+    AFRAME.registerComponent('sistema-navegacion-vr', {
+      init: function () {
+        this.teclas = {};
+        window.addEventListener('keydown', (e) => { this.teclas[e.key.toLowerCase()] = true; });
+        window.addEventListener('keyup', (e) => { this.teclas[e.key.toLowerCase()] = false; });
+      },
+      tick: function () {
+        let el = this.el;
+        let pos = el.getAttribute('position');
+        let velocidad = 0.08;
+
+        if (this.teclas['w']) pos.z -= velocidad;
+        if (this.teclas['s']) pos.z += velocidad;
+        if (this.teclas['a']) pos.x -= velocidad;
+        if (this.teclas['d']) pos.x += velocidad;
+        if (this.teclas['e']) pos.y += velocidad;
+        if (this.teclas['q']) pos.y -= velocidad;
+
+        if (pos.x > 20.0) pos.x = 20.0;
+        if (pos.x < -20.0) pos.x = -20.0;
+        if (pos.z > 20.0) pos.z = 20.0;
+        if (pos.z < -25.0) pos.z = -25.0;
+        if (pos.y > 15.0) pos.y = 15.0;
+        if (pos.y < 0.2) pos.y = 0.2;
+
+        el.setAttribute('position', pos);
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <a-scene fog="type: exponential; color: #a3c4f3; density: 0.012">
+    
+    <a-sky color="#a3c4f3"></a-sky>
+    <a-light type="ambient" color="#ffffff" intensity="0.65"></a-light>
+    <a-light type="directional" color="#fff" intensity="0.6" position="8 15 5"></a-light>
+
+    <!-- El Océano de Minecraft -->
+    <a-plane position="0 0 0" rotation="-90 0 0" width="150" height="150" color="#0077b6" roughness="0.6"></a-plane>
+
+    <!-- NUBES DE BLOQUES -->
+    
+      <a-box position="0 0 0" width="12" height="0.4" depth="5" color="#fff" opacity="0.85"></a-box>
+      <a-box position="5 0.4 -2" width="8" height="0.4" depth="4" color="#fff" opacity="0.85"></a-box>
+    
+
+    <!-- ================================================================= -->
+    <!-- MODELADO GEOMÉTRICO AVANZADO DEL GALEÓN -->
+    <!-- ================================================================= -->
+    
+      
+      <!-- 1. CASCO CURVO Y DETALLADO CON RELIEVES -->
+      <a-box position="0 0 0" width="2.0" height="0.6" depth="6.0" color="#3d230d"></a-box>
+      <a-box position="0 0.6 0" width="2.6" height="0.6" depth="6.4" color="#4a2c11"></a-box>
+      <a-box position="0 1.2 -0.2" width="2.8" height="0.6" depth="6.0" color="#5c3a21"></a-box>
+      
+      <!-- Molduras y barandillas laterales gruesas -->
+      <a-box position="-1.4 1.6 0" width="0.2" height="0.6" depth="5.8" color="#3d230d"></a-box>
+      <a-box position="1.4 1.6 0" width="0.2" height="0.6" depth="5.8" color="#3d230d"></a-box>
+
+      <!-- Troneras oscuras en los costados -->
+      <a-box position="-1.42 0.8 1.5" width="0.05" height="0.4" depth="0.4" color="#1a1a1a"></a-box>
+      <a-box position="-1.42 0.8 0.0" width="0.05" height="0.4" depth="0.4" color="#1a1a1a"></a-box>
+      <a-box position="-1.42 0.8 -1.5" width="0.05" height="0.4" depth="0.4" color="#1a1a1a"></a-box>
+      <a-box position="1.42 0.8 1.5" width="0.05" height="0.4" depth="0.4" color="#1a1a1a"></a-box>
+      <a-box position="1.42 0.8 0.0" width="0.05" height="0.4" depth="0.4" color="#1a1a1a"></a-box>
+      <a-box position="1.42 0.8 -1.5" width="0.05" height="0.4" depth="0.4" color="#1a1a1a"></a-box>
+
+      <!-- 2. PROA ELEVADA ESCALONADA Y BAUPRÉS -->
+      <a-box position="0 0.9 3.4" rotation="15 0 0" width="2.2" height="0.8" depth="1.0" color="#4a2c11"></a-box>
+      <a-box position="0 1.4 3.8" rotation="15 0 0" width="1.6" height="0.6" depth="0.8" color="#5c3a21"></a-box>
+      <a-box position="0 1.6 4.6" rotation="10 0 0" width="0.2" height="0.2" depth="1.8" color="#2b2017"></a-box>
+
+      <!-- 3. CASTILLO DE POPA ELEVADO CON DETALLES -->
+      <a-box position="0 1.8 -2.8" width="2.8" height="1.4" depth="1.8" color="#3d230d"></a-box>
+      <a-box position="0 2.5 -2.8" width="3.0" height="0.2" depth="2.0" color="#5c3a21"></a-box>
+      <a-box position="-1.4 2.7 -2.8" width="0.1" height="0.4" depth="1.8" color="#ffb703"></a-box>
+      <a-box position="1.4 2.7 -2.8" width="0.1" height="0.4" depth="1.8" color="#ffb703"></a-box>
+
+      <!-- ================================================================= -->
+      <!-- NUEVAS VELAS PIRAMIDALES ESCALONADAS COMPACTAS (ESTILO LANA MINECRAFT) -->
+      <!-- ================================================================= -->
+      
+      <!-- PALO MAYOR (Mástil del Centro) -->
+      <a-box position="0 4.8 -0.2" width="0.2" height="7.2" depth="0.2" color="#2b2017"></a-box>
+      <!-- Vergas horizontales estructurales que cruzan las velas -->
+      <a-box position="0 3.2 -0.2" rotation="0 0 0" width="4.2" height="0.12" depth="0.12" color="#4a2c11"></a-box>
+      <a-box position="0 5.0 -0.2" rotation="0 90 0" width="3.4" height="0.12" depth="0.12" color="#4a2c11"></a-box>
+      <a-box position="0 6.6 -0.2" rotation="0 90 0" width="2.6" height="0.12" depth="0.12" color="#4a2c11"></a-box>
+      <a-box position="0 7.8 -0.2" rotation="0 90 0" width="1.8" height="0.12" depth="0.12" color="#4a2c11"></a-box>
+      
+      <!-- BLOQUES DE VELAS ESCALONADAS (Se ensanchan hacia abajo en capas) -->
+      <!-- Capa Base Superior (Más angosta) -->
+      <a-box position="0 8.0 0.0" width="0.3" height="1.0" depth="2.5" color="#f4f4f9"></a-box>
+      <!-- Capa Media Alta -->
+      <a-box position="0 5.8 0.1" width="2.4" height="1.4" depth="0.3" color="#e6e6ea"></a-box>
+      <!-- Capa Media Baja -->
+      <a-box position="0 4.1 0.2" width="3.2" height="1.6" depth="0.3" color="#f4f4f9"></a-box>
+      <!-- Capa Inferior Masiva (Más ancha al nivel de la cubierta) -->
+      <a-box position="0 2.3 0.3" width="4.0" height="1.6" depth="0.3" color="#e6e6ea"></a-box>
+
+
+      <!-- PALO DE TRINQUETE (Mástil del Frente) -->
+      <a-box position="0 4.2 2.0" width="0.18" height="6.0" depth="0.18" color="#2b2017"></a-box>
+      <a-box position="0 2.8 2.0" rotation=" 90 0" width="3.4" height="0.1" depth="0.1" color="#4a2c11"></a-box>
+      <a-box position="0 4.6 2.0" rotation="0 90 0" width="2.6" height="0.1" depth="0.1" color="#4a2c11"></a-box>
+      <a-box position="0 6.2 2.0" rotation="0 90 0" width="1.8" height="0.1" depth="0.1" color="#4a2c11"></a-box>
+      
+      <!-- Velas del frente escalonadas compactas -->
+      <a-box position="0 5.4 2.1" width="1.6" height="1.2" depth="0.3" color="#f4f4f9"></a-box>
+      <a-box position="0 3.7 2.2" width="2.4" height="1.6" depth="0.3" color="#e6e6ea"></a-box>
+      <a-box position="0 1.9 2.3" width="3.2" height="1.4" depth="0.3" color="#f4f4f9"></a-box>
+
+
+      <!-- VELAS DIAGONALES TRIANGULARES DE PROA (Conectadas e inclinadas al bauprés) -->
+      <a-box position="0 2.3 3.4" rotation="28 0 0" width="0.15" height="1.6" depth="1.2" color="#e6e6ea"></a-box>
+      <a-box position="0 3.2 4.0" rotation="28 0 0" width="0.15" height="1.4" depth="1.0" color="#f4f4f9"></a-box>
+
+
+      <!-- PALO DE MESANA (Mástil de Atrás sobre el Camarote) -->
+      <a-box position="0 3.8 -2.6" width="0.16" height="4.8" depth="0.16" color="#2b2017"></a-box>
+      <!-- Viga trasera superior diagonal -->
+      <a-box position="0 4.8 -3.3" rotation="-22 0 0" width="0.1" height="0.1" depth="1.8" color="#4a2c11"></a-box>
+      <!-- Vela Cangreja Trasera unida por completo a la madera -->
+      <a-box position="0 3.4 -3.3" width="0.12" height="2.4" depth="1.5" color="#f4f4f9"></a-box>
+
+    
+    <!-- ================================================================= -->
+
+    <!-- CONTENEDOR DE CÁMARA VR (RIG) -->
+    <!-- Configurado estratégicamente para aparecer a una distancia perfecta (Z = 6) y altura ideal (Y = 3.5) -->
+    
+      
+        <!-- Retícula/Mira fija central limpia -->
+        <a-cursor id="cursor-mira" color="#ffffff" position="0 0 -1" scale="0.6 0.6 0.6"></a-cursor>
+      
+    
+
+  </a-scene>
+
+</body>
+</html>
