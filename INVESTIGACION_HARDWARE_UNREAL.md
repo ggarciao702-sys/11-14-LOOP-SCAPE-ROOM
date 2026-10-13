@@ -46,7 +46,8 @@ Marcar una sola opción y explicar por qué.
 - [x] **Continuar con Unreal Engine con alcance reducido:** el proyecto usará una sola sala, una pista, un acertijo y una salida; no se usarán efectos pesados como Lumen/Nanite si el hardware no los soporta bien.
 - [ ] **Usar alternativa web:** se continuará con A-Frame/HTML/JavaScript porque Unreal Engine no es viable para las dos integrantes en este momento.
 
-**Decisión y justificación:** Pendiente.
+**Decisión y justificación:** 
+Se opta por continuar con Unreal Engine bajo un alcance reducido para el MVP. Actualmente el equipo de desarrollo está compuesto por dos integrantes que trabajan en paralelo con diferentes tecnologías:Gabriela utiliza Godot/Unity, y Sara se encarga de la implementación en Unreal Engine. Dado que el rendimiento de Unreal Engine depende estrictamente de las capacidades de hardware de la máquina de Sara, se ha determinado limitar el diseño arquitectónico a una estructura controlada (una sola sala, un acertijo lógico y una salida), desactivando tecnologías de alta exigencia gráfica como Lumen o Nanite. Esto permite aprovechar el potencial del motor en su rama de desarrollo sin comprometer la viabilidad técnica ni generar bloqueos por limitaciones de hardware en el equipo.
 
 ## Entregable para la próxima revisión
 
