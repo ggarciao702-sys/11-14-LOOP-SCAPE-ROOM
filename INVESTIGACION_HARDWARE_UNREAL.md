@@ -10,10 +10,12 @@ Antes de iniciar el desarrollo en Unreal Engine, el equipo debe comprobar si **a
 
 Completar una fila por computador. No publicar números de serie, claves ni información personal.
 
+
 | Integrante | Sistema operativo y versión | Procesador | RAM instalada | Tarjeta gráfica | VRAM | ¿DirectX 12? | Espacio libre | ¿Unreal Engine abre? | Evidencia |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Gabriela Garcia Osuna | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
-| Sara Estefany Montaño Echeverry | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Gabriela Garcia Osuna | Windows 11 Home | Intel Core i5-13420H / i7-13620H | 16 GB DDR5 | Intel UHD Graphics (Integrada) | Compartida (RAM) | Sí | [Revisar GB libres] | No (Desarrollo en Godot/Unity) | [Captura de specs] |
+| Sara Estefany Montaño Echeverry | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Sí (Alcance Reducido) | [Captura de specs] |
+
 
 ## Referencia para Unreal Engine 5
 
