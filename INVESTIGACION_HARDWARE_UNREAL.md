@@ -43,7 +43,7 @@ Cuando ambas hayan revisado su equipo:
 Marcar una sola opción y explicar por qué.
 
 - [ ] **Continuar con Unreal Engine:** ambas integrantes pueden abrir y ejecutar el proyecto base.
-- [ ] **Continuar con Unreal Engine con alcance reducido:** el proyecto usará una sola sala, una pista, un acertijo y una salida; no se usarán efectos pesados como Lumen/Nanite si el hardware no los soporta bien.
+- [x] **Continuar con Unreal Engine con alcance reducido:** el proyecto usará una sola sala, una pista, un acertijo y una salida; no se usarán efectos pesados como Lumen/Nanite si el hardware no los soporta bien.
 - [ ] **Usar alternativa web:** se continuará con A-Frame/HTML/JavaScript porque Unreal Engine no es viable para las dos integrantes en este momento.
 
 **Decisión y justificación:** Pendiente.
