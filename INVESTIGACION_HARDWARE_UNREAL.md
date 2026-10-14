@@ -14,7 +14,7 @@ Completar una fila por computador. No publicar números de serie, claves ni info
 | Integrante | Sistema operativo y versión | Procesador | RAM instalada | Tarjeta gráfica | VRAM | ¿DirectX 12? | Espacio libre | ¿Unreal Engine abre? | Evidencia |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Gabriela Garcia Osuna | Windows 11 Home | Intel Core i5-13420H / i7-13620H | 16 GB DDR5 | Intel UHD Graphics (Integrada) | Compartida (RAM) | Sí | [Revisar GB libres] | No (Desarrollo en Godot/Unity) | [Captura de specs] |
-| Sara Estefany Montaño Echeverry | Windows 11 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Sí (descargado junto a epic games) | [Captura de specs] |
+| Sara Estefany Montaño Echeverry | Windows 11 Home |Intel Core i5-13400 (Desktop) | 16 GB DDR4 / DDR5 | Intel UHD Graphics 770 (Integrada)|Compartida (hasta 8 GB compartidos de RAM)   | Sí |Si (descargado junto a epic games) | [Captura de specs] |
 
 
 ## Referencia para Unreal Engine 5
