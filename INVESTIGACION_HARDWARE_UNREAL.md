@@ -14,7 +14,7 @@ Completar una fila por computador. No publicar números de serie, claves ni info
 | Integrante | Sistema operativo y versión | Procesador | RAM instalada | Tarjeta gráfica | VRAM | ¿DirectX 12? | Espacio libre | ¿Unreal Engine abre? | Evidencia |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Gabriela Garcia Osuna | Windows 11 Home | Intel Core i5-13420H / i7-13620H | 16 GB DDR5 | Intel UHD Graphics (Integrada) | Compartida (RAM) | Sí | [Revisar GB libres] | No (Desarrollo en Godot/Unity) | [Captura de specs] |
-| Sara Estefany Montaño Echeverry | Windows 11 Home |Intel Core i5-13400 (Desktop) | 16 GB DDR4 / DDR5 | Intel UHD Graphics 770 (Integrada)|Compartida (hasta 8 GB compartidos de RAM)   | Sí |256 GB libres (SSD total 512 GB) |Si (descargado junto a epic games) | <img width="636" height="535" alt="image" src="https://github.com/user-attachments/assets/96cdaa77-a404-40f8-b61b-4a76384c3d41" />
+| Sara Estefany Montaño Echeverry | Windows 11 Home |Intel Core i5-13400 (Desktop) | 16 GB DDR4 / DDR5 | Intel UHD Graphics 770 (Integrada)|Compartida (hasta 8 GB compartidos de RAM)   | Sí  |256 GB libres (SSD total 512 GB) |Si (Desarrollado en Unreal Engine junto Epic game ) | <img width="636" height="535" alt="image" src="https://github.com/user-attachments/assets/96cdaa77-a404-40f8-b61b-4a76384c3d41" />
  |
 
 
