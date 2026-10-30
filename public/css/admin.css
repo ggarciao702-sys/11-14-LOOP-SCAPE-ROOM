@@ -1,0 +1,46 @@
+/* LOOP · Panel de datos (usa las variables de estilos.css) */
+.adm-page main{max-width:1500px;margin:0 auto;padding:96px 4vw 60px}
+.adm-top{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;gap:16px;padding:10px 4vw;background:rgba(10,6,18,.9);backdrop-filter:blur(10px);border-bottom:1px solid #2b1a47}
+.adm-top .wm{font:400 22px var(--d);color:var(--bone)}
+.adm-title{color:var(--mute);font-weight:600}
+.adm-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.adm-actions .btn{padding:8px 14px;font-size:13px;margin:0}
+
+.adm-page section{padding:0}
+.adm-login{max-width:460px;margin:8vh auto 0;text-align:center}
+.adm-login h1{font:400 clamp(26px,5vw,40px)/1.1 var(--d);margin-bottom:10px}
+.adm-login .sub{margin:0 auto 22px}
+.adm-login form{display:grid;gap:12px;margin-bottom:18px}
+.adm-page input{background:#120a20;border:1px solid #3a2560;color:var(--bone);border-radius:12px;padding:12px 14px;font:400 15px var(--b);width:100%}
+.adm-page input:focus{outline:2px solid var(--violet);outline-offset:1px}
+.adm-err{min-height:1.4em;color:var(--blood);font-size:14px}
+
+.adm-cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:22px}
+.adm-cifras div{background:var(--ink2);border:1px solid #2b1a47;border-radius:14px;padding:14px 16px}
+.adm-cifras b{display:block;font:400 28px var(--d);color:var(--violet)}
+.adm-cifras small{color:var(--mute)}
+
+.adm-barra{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.adm-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.adm-tabs button{background:transparent;color:var(--bone);border:1px solid #3a2560;border-radius:99px;padding:8px 18px;font:600 14px var(--b);cursor:pointer}
+.adm-tabs button.on{background:var(--violet);color:#14061f;border-color:var(--violet)}
+.adm-barra input{max-width:320px}
+.adm-nota{color:var(--mute);font-size:13px;margin-bottom:8px}
+
+.adm-tabla{overflow-x:auto;border:1px solid #2b1a47;border-radius:14px;background:var(--ink)}
+.adm-tabla table{width:100%;border-collapse:collapse;font-size:14px}
+.adm-tabla th{position:sticky;top:0;background:var(--ink2);text-align:left;padding:10px 12px;color:var(--mute);font-weight:600;white-space:nowrap;border-bottom:1px solid #2b1a47}
+.adm-tabla td{padding:10px 12px;border-bottom:1px solid #22143a;vertical-align:top}
+.adm-tabla tr:hover td{background:#1a0f2c}
+.adm-tabla td.ancho{min-width:260px;white-space:pre-wrap}
+.adm-tabla td.nowrap{white-space:nowrap}
+.adm-vacio{text-align:center;color:var(--mute);padding:34px!important}
+.pill{display:inline-block;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+.pill.ok{background:#173d22;color:#7dffa0}.pill.pend{background:#47340f;color:#ffd166}.pill.no{background:#4a1220;color:#ff8aa0}
+@media(max-width:600px){.adm-title{display:none}.adm-actions{width:100%}}
+
+/* Dentro de la ventana de la tienda */
+.embebido .adm-top .wm,.embebido .adm-login a.btn.o{display:none}
+.embebido .adm-top{padding-right:70px}
+
+.adm-estado{color:#7dffa0;font-size:13px;margin-bottom:14px;font-weight:600}

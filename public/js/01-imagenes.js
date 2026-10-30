@@ -1,0 +1,3 @@
+// Rutas de las imágenes (archivos dentro de /img)
+const IMG={"logo":"img/logo.png", "cristian":"img/cristian.jpg", "sara":"img/sara.jpg", "cano":"img/cano.jpg", "gabriela":"img/gabriela.jpg", "andrea":"img/andrea.jpg", "shaday":"img/shaday.jpg", "n1":"img/n1.jpg", "n2":"img/n2.jpg", "n3":"img/n3.jpg", "v1":"img/v1.jpg", "v2":"img/v2.jpg", "v3":"img/v3.jpg", "v4":"img/v4.jpg", "v5":"img/v5.jpg", "v6":"img/v6.jpg", "bf":"img/bf.png"};
+Object.assign(IMG,{"pt1":"img/pt1.jpg","pt2":"img/pt2.jpg","pt3":"img/pt3.jpg","pt4":"img/pt4.jpg","pt5":"img/pt5.jpg","pt6":"img/pt6.jpg","pt7":"img/pt7.jpg","bn1":"img/bn1.jpg","bn2":"img/bn2.jpg","bn3":"img/bn3.jpg"});

@@ -1,0 +1,9 @@
+{
+  "name": "loop-tienda",
+  "version": "1.0.0",
+  "description": "Tienda LOOP con base de datos SQLite y aviso por correo",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=22.13" },
+  "dependencies": { "nodemailer": "^6.9.16" }
+}
