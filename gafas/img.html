@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="img/favicon.ico" rel="icon">
+    <link href="img/teclado-espac3b1ol-numeros.jpg" rel="icon">
+    <title>Simulador de Alturas VR ARBERISYSTEC</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      
+      <a-assets>
+        <img id="miCielo360" src="img/mine.jpg">
+       
+      </a-assets>
+
+      <a-sky src="#miCielo360" rotation="0 -90 0"></a-sky>
+<img id="texturaMadera" src="img/madera.jpg">
+      <audio id="sonidoAire" src="img/videos/viento.mp3" preload="auto"></audio>
+
+      <a-entity id="rig" position="0 200 0.5">
+        <a-camera look-controls wasd-controls-enabled="false">
+          <a-cursor 
+            id="fuse-cursor"
+            fuse="true" 
+            fuse-timeout="1000"
+            color="yellow"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03">
+          </a-cursor>
+          
+          <a-text id="msg" value="BIENVENIDO ARBERISYSTEC" align="center" position="0 0.5 -2" color="white" width="4"></a-text>
+        </a-camera>
+         <a-entity sound="src: #sonidoAire; autoplay: true; loop: true; volume: 10"></a-entity>
+        <a-box id="leftLeg" position="-0.15 -1.2 -0.5" width="0.12" height="0.8" depth="0.2" color="blue"></a-box>
+        <a-box id="rightLeg" position="0.15 -1.2 -0.5" width="0.12" height="0.8" depth="0.2" color="red"></a-box>
+      </a-entity>
+
+      <a-entity position="0 205 0" animation="property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true">
+  
+  <a-entity position="10 0 0">
+    
+    <a-cone color="#222" radius-bottom="0.05" radius-top="0.01" height="0.3" rotation="90 0 0"></a-cone>
+    
+    <a-plane color="#111" width="0.4" height="0.1" position="-0.2 0 0" 
+             animation="property: rotation; from: 0 0 0; to: 0 0 40; dir: alternate; dur: 200; loop: true"></a-plane>
+    
+    <a-plane color="#111" width="0.4" height="0.1" position="0.2 0 0" 
+             animation="property: rotation; from: 0 0 0; to: 0 0 -40; dir: alternate; dur: 200; loop: true"></a-plane>
+             
+  </a-entity>
+</a-entity>
+
+<a-entity position="0 190 0" 
+          animation="property: rotation; to: 0 -360 0; dur: 7000; easing: linear; loop: true">
+  
+  <a-entity position="15 0 5">
+    
+    <a-cone color="#111" radius-bottom="0.06" radius-top="0.01" height="0.4" rotation="90 0 0"></a-cone>
+    
+    <a-plane color="#000" width="0.5" height="0.12" position="-0.25 0 0" 
+             animation="property: rotation; from: 0 0 0; to: 0 0 45; dir: alternate; dur: 300; loop: true"></a-plane>
+    
+    <a-plane color="#000" width="0.5" height="0.12" position="0.25 0 0" 
+             animation="property: rotation; from: 0 0 0; to: 0 0 -45; dir: alternate; dur: 300; loop: true"></a-plane>
+             
+  </a-entity>
+</a-entity>
+
+<a-entity position="0 195 0" 
+          animation="property: position; to: 0 197 0; dir: alternate; dur: 2000; loop: true; easing: easeInOutQuad">
+  
+  <a-entity animation="property: rotation; to: 0 360 0; dur: 5000; easing: linear; loop: true">
+    
+    <a-entity position="0 0 0"
+              animation="property: position; from: -8 0 0; to: 8 0 0; dir: alternate; dur: 2500; easing: linear; loop: true">
+      
+      <a-cone color="#000" radius-bottom="0.04" radius-top="0.01" height="0.25" rotation="90 0 0"></a-cone>
+      
+      <a-plane color="#000" width="0.3" height="0.08" position="-0.15 0 0" 
+               animation="property: rotation; from: 0 0 0; to: 0 0 60; dir: alternate; dur: 100; loop: true"></a-plane>
+      
+      <a-plane color="#000" width="0.3" height="0.08" position="0.15 0 0" 
+               animation="property: rotation; from: 0 0 0; to: 0 0 -60; dir: alternate; dur: 100; loop: true"></a-plane>
+               
+    </a-entity>
+  </a-entity>
+</a-entity>
+     <a-box 
+  id="tabla" 
+  class="clickable" 
+  position="0 199.85 -2.5" 
+  width="0.1" 
+  height="0.1" 
+  depth="5" 
+  src="#texturaMadera"
+  repeat="1 10"> 
+  <a-box position="0 0.06 1.3" width="0.4" height="0.01" depth="0.05" color="yellow" opacity="0.6"></a-box>
+</a-box>
+
+      <a-entity id="btnRetry" position="0 20.5 -1" visible="false" scale="0.3 0.3 0.3">
+        <a-sphere color="#ff4444" radius="0.6" material="emissive: #ff0000; emissiveIntensity: 0.5">
+            <a-text value="REINTENTAR" align="center" position="0 0 0.7" width="10" color="white"></a-text>
+        </a-sphere>
+        <a-ring color="white" rotation="-90 0 0" radius-inner="0.6" radius-outer="0.7" position="0 -0.8 0" opacity="0.5"></a-ring>
+      </a-entity>
+
+    </a-scene>
+
+    <script>
+        
+      const rig = document.querySelector('#rig');
+      const tabla = document.querySelector('#tabla');
+      const btnRetry = document.querySelector('#btnRetry');
+      const msg = document.querySelector('#msg');
+      const leftLeg = document.querySelector('#leftLeg');
+      const rightLeg = document.querySelector('#rightLeg');
+      const cursor = document.querySelector('#fuse-cursor');
+
+      let stepsTaken = 0;
+      let isMoving = false;
+      const stepSize = 0.26; // 26 cm exactos
+      const totalSteps = 5;
+
+      // Mensaje tras 3 segundos
+      setTimeout(() => {
+        msg.setAttribute('value', 'INSTRUCCIONES:\nMira la tabla para avanzar luego mira al frente, repitelo.');
+        msg.setAttribute('color', 'yellow');
+      }, 3000);
+
+      // Lógica de avance por mirada
+      tabla.addEventListener('click', () => {
+        if (isMoving || stepsTaken >= totalSteps) return;
+        
+        isMoving = true;
+        stepsTaken++;
+
+        // Animación de caminata de piernas
+        const footMove = (stepsTaken % 2 === 0) ? -0.4 : 0.4;
+        leftLeg.setAttribute('animation', `property: position; to: -0.15 -1.2 ${footMove}; dur: 300`);
+        rightLeg.setAttribute('animation', `property: position; to: 0.15 -1.2 ${-footMove}; dur: 300`);
+
+        // Movimiento de avance en el eje Z
+        const currentZ = rig.object3D.position.z;
+        rig.setAttribute('animation', `property: position; to: 0 200 ${currentZ - stepSize}; dur: 500; easing: easeOutQuad`);
+
+        // Feedback del cursor
+        cursor.setAttribute('color', 'lime');
+        
+        setTimeout(() => {
+          isMoving = false;
+          cursor.setAttribute('color', 'yellow');
+          
+          if (stepsTaken === totalSteps) {
+            finalizarJuego();
+          }
+        }, 600);
+      });
+
+      function finalizarJuego() {
+        msg.setAttribute('value', '¡LO LOGRASTE!\nRetirate las gafas.');
+        msg.setAttribute('color', '#2ecc71');
+        
+        // Colocar el botón redondo frente al usuario
+        const pos = rig.object3D.position;
+        btnRetry.setAttribute('position', `${pos.x} ${pos.y + 0.2} ${pos.z - 1.5}`);
+        btnRetry.setAttribute('visible', true);
+        btnRetry.classList.add('clickable');
+      }
+
+      // Reiniciar
+      btnRetry.addEventListener('click', () => {
+        location.reload();
+      });
+      
+    </script>
+  </body>
+</html>

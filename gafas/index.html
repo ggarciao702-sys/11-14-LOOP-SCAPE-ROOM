@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Entorno Submarino 360 - Vista Conductor</title>
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+</head>
+<body>
+
+  <!-- hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhEscena con niebla calibrada para difuminar el fondo equirrectangular en la distancia -->
+  <a-scene fog="type: exponential; color: #020918; density: 0.04" renderer="colorManagement: true">
+    
+    <!-- REGISTRO DE TEXTURAS (Assets del mundo) -->
+    <a-scene>
+      <!-- Precargamos la imagen en el sistema de assets para optimizar el rendimiento -->
+      <a-assets>
+        <img id="fondo-360" src="img/ChatGPT Image 10 sept 2026, 09_44_06 p.m.png">
+      </a-assets>
+
+      <!-- Aplicamos la imagen al cielo (fondo) utilizando su ID -->
+      <a-sky src="#fondo-360"></a-sky>
+    </a-scene>>
+
+    <!-- FONDO EQUIRRECTANGULAR INTERACTIVO (Skybox 360) -->
+    <a-sky src="#fondo-mar-360" rotation="0 -90 0"></a-sky>
+
+    <!-- ILUMINACIÓN DE LA ESCENA -->
+    <!-- Luz azul cenital para teñir el exterior del coche -->
+    <a-light type="ambient" color="#0c2b54" intensity="1.2"></a-light>
+    <a-light type="directional" color="#1a5da8" intensity="1.5" position="0 10 0"></a-light>
+    
+    <!-- Alarma interna de pánico parpadeante sobre el tablero -->
+    <a-light type="point" color="#ff1111" distance="3.5" position="0 0.15 -0.2"
+             animation="property: light.intensity; from: 0.3; to: 2.6; dur: 500; dir: alternate; loop: true; easing: easeInOutQuad"></a-light>
+
+    <!-- PERSPECTIVA DEL AVATAR CONDUCTOR (Cámara Primera Persona Fija) -->
+    <!-- Te bloquea exactamente en los mandos del volante; haz un clic al cargar para mirar a los lados -->
+    
+        <!-- ========================================== -->
+    <!-- CARROCERÍA COMPLETA DE LA CAMIONETA BLANCA -->
+    <!-- ========================================== -->
+    
+      <!-- Piso alfombrado del coche debajo de tus pies -->
+      <a-box position="0 -0.8 0" width="2.0" height="0.1" depth="2.6" material="color: #0d1117; roughness: 0.9"></a-box>
+      
+      <!-- Techo solar blanco ubicado arriba de tu cabeza -->
+      <a-box position="0 0.9 0" width="2.0" height="0.06" depth="2.6" material="color: #ffffff; metalness: 0.7; roughness: 0.2"></a-box>
+      
+      <!-- CAPÓ DELANTERO BLANCO (Se observa al mirar de frente por el parabrisas) -->
+      <a-box position="0 -0.2 -1.45" width="1.96" height="0.5" depth="0.8" material="color: #ffffff; metalness: 0.7; roughness: 0.2"></a-box>
+
+      <!-- PUERTAS LATERALES BLANCAS CON VOLUMEN -->
+      <a-box position="-0.95 -0.3 0" width="0.06" height="0.9" depth="2.4" material="color: #ffffff; metalness: 0.7; roughness: 0.2"></a-box>
+      <a-box position="0.95 -0.3 0" width="0.06" height="0.9" depth="2.4" material="color: #ffffff; metalness: 0.7; roughness: 0.2"></a-box>
+      <a-box position="0 -0.3 1.2" width="2.0" height="0.9" depth="0.08" material="color: #ffffff; metalness: 0.7; roughness: 0.2"></a-box>
+
+      <!-- MARCOS BLANCOS DE DISEÑO PARA LAS VENTANAS -->
+      <a-box position="-0.95 0.3 -0.9" rotation="18 0 0" width="0.05" height="1.1" depth="0.05" color="#ffffff"></a-box>
+      <a-box position="0.95 0.3 -0.9" rotation="18 0 0" width="0.05" height="1.1" depth="0.05" color="#ffffff"></a-box>
+      <a-box position="-0.95 0.3 0.1" width="0.05" height="1.1" depth="0.05" color="#ffffff"></a-box>
+      <a-box position="0.95 0.3 0.1" width="0.05" height="1.1" depth="0.05" color="#ffffff"></a-box>
+
+      <!-- TABLERO DE CONTROL INTERIOR Y INSTRUMENTOS -->
+      <a-box position="0 -0.2 -0.8" width="1.9" height="0.4" depth="0.3" material="color: #1e293b; roughness: 0.7"></a-box>
+      <!-- Consola multimedia GPS -->
+      <a-box position="0 -0.15 -0.64" width="0.25" height="0.15" depth="0.02" material="color: #38bdf8; emissive: #0284c7; emissiveIntensity: 0.7"></a-box>
+      <!-- Tacómetro de velocidad -->
+      <a-box position="-0.45 -0.15 -0.64" width="0.3" height="0.1" depth="0.02" material="color: #22c55e; emissive: #15803d; emissiveIntensity: 0.6"></a-box>
+
+      <!-- EL VOLANTE DEL CONDUCTOR -->
+      
+        <a-cylinder radius="0.16" height="0.04" material="color: #0f172a; roughness: 0.4"></a-cylinder>
+      
+
+      <!-- SECCIONES DE ASIENTOS COMPLETA -->
+      <a-box position="-0.45 -0.5 0.05" width="0.48" height="0.4" depth="0.48" color="#334155"></a-box>
+      <a-box position="-0.45 0.05 0.25" rotation="-5 0 0" width="0.48" height="0.75" depth="0.12" color="#334155"></a-box>
+      <a-box position="0.45 -0.5 0.05" width="0.48" height="0.4" depth="0.48" color="#334155"></a-box>
+      <a-box position="0.45 0.05 0.25" rotation="-5 0 0" width="0.48" height="0.75" depth="0.12" color="#334155"></a-box>
+      <a-box position="-0.45 -0.5 0.9" width="0.48" height="0.4" depth="0.48" color="#334155"></a-box>
+      <a-box position="-0.45 0.05 1.1" rotation="-5 0 0" width="0.48" height="0.75" depth="0.12" color="#334155"></a-box>
+      <a-box position="0.45 -0.5 0.9" width="0.48" height="0.4" depth="0.48" color="#334155"></a-box>
+      <a-box position="0.45 0.05 1.1" rotation="-5 0 0" width="0.48" height="0.75" depth="0.12" color="#334155"></a-box>
+    
+
+    <!-- ========================================== -->
+    <!-- PERSONAJES BLOCKY SENTADOS ADENTRO -->
+    <!-- ========================================== -->
+    <!-- Tu propio cuerpo en el volante -->
+    
+      <a-box width="0.4" height="0.5" depth="0.22" color="#1e293b"></a-box>
+    
+
+    <!-- Copiloto a la derecha temblando por animación -->
+    
+      <a-box width="0.4" height="0.5" depth="0.22" color="#b91c1c"></a-box>
+      
+        <a-box width="0.24" height="0.24" depth="0.24" color="#fdba74"></a-box>
+        <a-box position="0 0.12 -0.02" width="0.26" height="0.06" depth="0.26" color="#451a03"></a-box>
+        <a-box position="-0.05 0.03 -0.13" width="0.04" height="0.04" depth="0.01" color="#fff"></a-box>
+        <a-box position="0.05 0.03 -0.13" width="0.04" height="0.04" depth="0.01" color="#fff"></a-box>
+      
+    
+
+    <!-- Dos Pasajeros en los asientos traseros -->
+    
+      <a-box width="0.38" height="0.5" depth="0.22" color="#047857"></a-box>
+      <a-box position="0 0.4 0" width="0.24" height="0.24" depth="0.24" color="#fbcfe8"></a-box>
+    
+
+    
+      <a-box width="0.38" height="0.5" depth="0.22" color="#4b5563"></a-box>
+      <a-box position="0 0.4 0" width="0.24" height="0.24" depth="0.24" color="#fed7aa"></a-box>
+    
+
+    <!-- ========================================== -->
+    <!-- ZOMBIS EN LAS VENTANAS LATERALES -->
+    <!-- ========================================== -->
+    <!-- Zombi Izquierdo (Rasguñando la ventana del conductor) -->
+    
+      <a-box width="0.25" height="0.25" depth="0.25" color="#14532d"></a-box>
+      <a-box position="-0.06 0.05 0.13" width="0.04" height="0.04" depth="0.01" material="color: #ffcc00; emissive: #ffcc00"></a-box>
+      <a-box position="0.06 0.05 0.13" width="0.04" height="0.04" depth="0.01" material="color: #ffcc00; emissive: #ffcc00"></a-box>
+      <a-box position="0 -0.38 0" width="0.42" height="0.5" depth="0.22" color="#334155"></a-box>
+      <!-- Animación spamtica de brazos arañando -->
+      <a-box position="-0.15 -0.12 0.18" width="0.07" height="0.07" depth="0.26" color="#14532d"
+             animation="property: rotation; to: -30 25 0; dur: 140; dir: alternate; loop: true"></a-box>
+      <a-box position="0.15 -0.12 0.18" width="0.07" height="0.07" depth="0.26" color="#14532d"
+             animation="property: rotation; to: 30 -15 0; dur: 170; dir: alternate; loop: true"></a-box>
+    
+
+    <!-- Zombi Derecho (Rasguñando la ventana del copiloto) -->
+    
+      <a-box width="0.25" height="0.25" depth="0.25" color="#166534"></a-box>
+      <a-box position="-0.06 0.05 0.13" width="0.04" height="0.04" depth="0.01" material="color: #ff0000; emissive: #ff0000"></a-box>
+      <a-box position="0.06 0.05 0.13" width="0.04" height="0.04" depth="0.01" material="color: #ff0000; emissive: #ff0000"></a-box>
+      <a-box position="0 -0.38 0" width="0.42" height="0.5" depth="0.22" color="#1e293b"></a-box>
+      <a-box position="-0.15 -0.12 0.18" width="0.07" height="0.07" depth="0.26" color="#166534"
+             animation="property: rotation; to: 35 -20 0; dur: 120; dir: alternate; loop: true"></a-box>
+      <a-box position="0.15 -0.12 0.18" width="0.07" height="0.07" depth="0.26" color="#166534"
+             animation="property: rotation; to: -25 25 0; dur: 150; dir: alternate; loop: true"></a-box>
+    
+
+    <!-- BURBUJAS EN EL PARABRISAS FRONTAL -->
+    <a-sphere position="-0.2 -0.5 -1.1" radius="0.025" material="color: #bae6fd; opacity: 0.65; roughness: 0"
+              animation="property: position; to: -0.2 2 -1.1; dur: 2200; loop: true; easing: linear"></a-sphere>
+    <a-sphere position="0.5 -0.8 -0.8" radius="0.035" material="color: #bae6fd; opacity: 0.55; roughness: 0"
+              animation="property: position; to: 0.5 2 -0.8; dur: 1900; loop: true; easing: linear"></a-sphere>
+
+  </a-scene>
+</body>
+</html>
+

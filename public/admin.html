@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LOOP · Panel administrativo</title>
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="adm-page">
+  <header class="adm-top">
+    <a class="wm" href="/">LOOP</a>
+    <span class="adm-title">Panel administrativo</span>
+    <div class="adm-actions" id="acciones" hidden>
+      <button class="btn o" id="recargar" type="button">Recargar datos</button>
+      <button class="btn" id="csv" type="button">Descargar CSV</button>
+      <button class="btn o" id="salir" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="adm-login" id="login" aria-labelledby="login-titulo">
+      <h1 id="login-titulo">Datos de LOOP</h1>
+      <p class="sub">Inicia sesión para consultar la información guardada en SQLite.</p>
+      <form id="form-login">
+        <label for="clave">Contraseña administrativa</label>
+        <input id="clave" name="clave" type="password" autocomplete="current-password" required>
+        <button class="btn" type="submit">Entrar al panel</button>
+      </form>
+      <p class="adm-err" id="login-err" role="alert" aria-live="polite"></p>
+      <a class="btn o" href="/">Volver a la tienda</a>
+    </section>
+
+    <section id="datos" hidden aria-labelledby="datos-titulo">
+      <h1 id="datos-titulo">Resumen de la tienda</h1>
+      <p class="adm-estado" id="estado" role="status" aria-live="polite">Cargando datos...</p>
+      <div class="adm-cifras" id="cifras" aria-label="Métricas principales"></div>
+      <div class="adm-barra">
+        <div class="adm-tabs" id="tabs" role="tablist" aria-label="Datos para consultar">
+          <button class="on" data-t="pedidos" type="button" role="tab" aria-selected="true">Pedidos</button>
+          <button data-t="clientes" type="button" role="tab" aria-selected="false">Clientes</button>
+          <button data-t="mensajes" type="button" role="tab" aria-selected="false">Mensajes</button>
+          <button data-t="productos" type="button" role="tab" aria-selected="false">Catálogo</button>
+        </div>
+        <label>
+          <span class="sr-only">Buscar en la tabla</span>
+          <input id="buscar" type="search" placeholder="Buscar..." autocomplete="off">
+        </label>
+      </div>
+      <p class="adm-nota" id="nota"></p>
+      <div class="adm-tabla">
+        <table id="tabla">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+</html>

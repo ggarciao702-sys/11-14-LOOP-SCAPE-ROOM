@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LOOP · Rompe el bucle</title><link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css"></head><body class="sp">
+<div id="sp" aria-hidden="true"><video id="spv" autoplay muted playsinline preload="auto" disablepictureinpicture tabindex="-1" src="media/intro.mp4"></video></div>
+<script src="js/intro.js"></script>
+<header><a href="#inicio" class="wm">LOOP</a>
+<nav><a href="#video" data-i="n_vd"></a><a href="#personajes" data-i="n_pj"></a><a href="#niveles" data-i="n_nv"></a><a href="#vestuarios" data-i="n_vs"></a><a href="#mascotas" data-i="n_ps"></a><a href="#contacto" data-i="n_so"></a><select id="xlng" aria-label="Idioma / Language"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option></select><select id="xctry" aria-label="País / Country"></select><button class="cart" id="bc">Carrito (0)</button></nav><button class="bg" id="mn" aria-label="Menu" aria-expanded="false">☰</button></header>
+
+<section class="hero" id="inicio"><div class="ghost" aria-hidden="true">LOOP</div>
+<div><div class="lg seal" id="sello" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Panel de datos (administrador)"><img src="img/logo.png" alt="LOOP"></div><h1><i data-i="h1a"></i> <span data-i="h1b"></span></h1>
+<p data-i="hp"></p>
+<a class="btn" href="#niveles" data-i="cta1"></a><a class="btn o" href="#personajes" data-i="cta2"></a>
+<div class="stats"><div><b>3</b><small data-i="s1"></small></div><div><b>6</b><small data-i="s2"></small></div><div><b>6</b><small data-i="s3"></small></div></div></div>
+<div class="stage" id="stage"><div class="ring"></div>
+<div class="l s"><img class="blend" src="img/sara.jpg" alt="Sara"></div>
+<div class="l k"><img class="blend" src="img/cano.jpg" alt="Cano"></div>
+<div class="l c"><img class="blend" src="img/cristian.jpg" alt="Cristian"></div></div></section>
+
+<div class="ribbons" aria-hidden="true"><div class="rb a"><div id="r1"></div></div><div class="rb b"><div id="r2"></div></div></div>
+
+<section id="video"><h2 data-i="vdh"></h2><p class="sub" data-i="vds"></p><div class="vid"><video autoplay muted loop playsinline preload="auto" disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate nofullscreen" tabindex="-1" oncontextmenu="return false" poster="img/poster.jpg" src="media/video-loop.mp4"></video></div></section>
+
+<section id="personajes"><h2 data-i="pjh"></h2><p class="sub" data-i="pjs"></p>
+<div class="chars" id="chars"><div class="cname" id="cn"></div>
+<div class="cinfo"><h3 id="ct"></h3><span class="tag">Premium</span><p id="cd"></p><div id="cb"></div></div>
+<div class="cfig" id="cf"><div class="ped"></div><img class="blend" id="ci" alt=""></div>
+<div class="pick" id="pk"></div></div></section>
+
+<section id="niveles"><h2 data-i="nvh"></h2><p class="sub" data-i="nvs"></p><div class="lv" id="lv"></div></section>
+
+<section id="vestuarios"><h2 data-i="vsh"></h2><p class="sub" data-i="vss"></p><div class="sc"><button class="ar l" data-sc="vs" aria-label="←">‹</button><div class="vs" id="vs"></div><button class="ar r" data-sc="vs" aria-label="→">›</button></div>
+<div class="promo bnr" id="bnr" role="region" aria-roledescription="carousel" aria-label="Banners"><button class="bnb l" id="bnp" aria-label="←">‹</button><button class="bnb r" id="bnx" aria-label="→">›</button><div class="bdt" id="bdt"></div></div></section>
+
+<section id="mascotas"><h2 data-i="psh"></h2><p class="sub" data-i="pss"></p><div class="sc"><button class="ar l" data-sc="ps" aria-label="←">‹</button><div class="vs" id="ps"></div><button class="ar r" data-sc="ps" aria-label="→">›</button></div></section>
+
+<section id="contacto"><h2 style="text-align:center" data-i="sh"></h2><p class="sub" style="margin-inline:auto;text-align:center" data-i="ss"></p>
+<form id="form-contacto"><label><span data-i="f1"></span><input name="usuario" required data-ip="f1p"></label>
+<label><span data-i="f2"></span><select name="tipo_reporte" id="tp"><option value="Reportar un error" data-i="o1"></option><option value="Problema con compras o pagos" data-i="o2"></option><option value="Consultar precio de un personaje" data-i="o3"></option><option value="Sugerencia de mejora" data-i="o4"></option><option value="Otro" data-i="o5"></option></select></label>
+<label><span data-i="f3"></span><textarea name="descripcion" id="ds" rows="4" required></textarea></label><button class="btn" type="submit" data-i="send"></button></form></section>
+
+<footer data-i="ft"></footer>
+<div id="cm"><div>
+<div id="xs1"><h3 class="mh" data-i="cart"></h3><div id="li"></div><p style="margin:12px 0"><b data-i="total"></b> <span id="tt"></span></p>
+<form id="xf" class="f" onsubmit="return false"><label class="w"><span data-i="name"></span><input name="name" required autocomplete="name"></label>
+<label><span data-i="doc"></span><input name="doc" required></label><label><span data-i="phone"></span><input name="phone" type="tel" required autocomplete="tel"></label>
+<label><span data-i="email"></span><input name="email" type="email" required autocomplete="email"></label><label><span data-i="city"></span><input name="city" required></label></form><p class="nt" data-i="priv" style="margin-top:8px"></p>
+<div class="acts"><button class="btn o" id="cc" data-x data-i="close"></button><button class="btn" id="xn1" data-i="next"></button></div></div>
+<div id="xs2" hidden><h3 class="mh" data-i="c2"></h3><div id="xsum"></div><div class="m" id="xm"></div>
+<div id="xpc" class="f" hidden><label class="w"><span data-i="cn"></span><input id="xcn" inputmode="numeric" autocomplete="off" maxlength="23" placeholder="0000 0000 0000 0000"></label>
+<label class="w"><span data-i="ch"></span><input id="xch" autocomplete="off"></label><label><span data-i="ce"></span><input id="xce" autocomplete="off" maxlength="5" placeholder="MM/AA"></label><label><span data-i="cv"></span><input id="xcv" inputmode="numeric" autocomplete="off" maxlength="4"></label></div>
+<label id="xpb" hidden><span data-i="bank"></span><select id="xbk"><option>Bancolombia</option><option>Davivienda</option><option>Banco de Bogotá</option><option>BBVA</option><option>Nequi</option><option>Banco de Occidente</option></select></label>
+<p class="nt" id="xpn" hidden></p><p class="er" id="xer" role="alert"></p>
+<div class="acts"><button class="btn o" id="xb2" data-i="back"></button><button class="btn" id="xpay"></button></div></div>
+<div id="xs3" hidden><div class="tk" id="xrc"></div><div class="acts"><button class="btn o" id="xprt" data-i="print"></button><button class="btn" data-x data-i="close"></button></div></div>
+</div></div>
+<div id="im" role="dialog" aria-modal="true" aria-labelledby="it"><div><img class="blend" id="ii" alt=""><h3 id="it" style="font:400 28px var(--d);color:var(--acc)"></h3><div class="w"><small data-i="wh"></small><p id="ia"></p></div><div class="w"><small data-i="hw"></small><p id="iu"></p></div><button class="btn" style="width:100%;background:var(--acc)" id="ic" data-i="ok"></button></div></div>
+<button id="aib" aria-label="Asistente LOOP">💬</button>
+<div id="ai" role="dialog" aria-label="Asistente LOOP"><div class="ah"><span data-i="ai_t"></span><button id="aix" aria-label="✕">✕</button></div><div id="am" aria-live="polite"></div><div id="ac"></div><div id="af"><input id="ain" data-ip="ai_ph" autocomplete="off"><button class="btn" id="aisb" data-i="ai_send"></button></div></div>
+<div class="toast" id="ts"></div>
+<div class="pnl" id="pnl" hidden role="dialog" aria-modal="true" aria-label="Panel de datos">
+<button class="pnl-x" id="pnl-x" type="button" aria-label="Cerrar">×</button>
+<iframe id="pnl-f" title="Panel de datos"></iframe>
+</div>
+<script src="js/01-imagenes.js"></script>
+<script src="js/02-textos.js"></script>
+<script src="js/03-datos.js"></script>
+<script src="js/04-utilidades.js"></script>
+<script src="js/05-tienda.js"></script>
+<script src="js/06-pago.js"></script>
+<script src="js/07-interfaz.js"></script>
+<script src="js/08-banners.js"></script>
+<script src="js/09-asistente.js"></script>
+<script src="js/10-video.js"></script>
+<script src="js/11-inicio.js"></script>
+<script src="js/12-panel.js"></script>
+<script src="js/menu.js"></script>
+</body></html>
